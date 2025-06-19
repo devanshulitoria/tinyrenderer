@@ -31,7 +31,7 @@ struct Shader : IShader {
         gl_Position = Projection*gl_Position;
     }
 
-    virtual bool fragment(const vec3 bar, TGAColor &gl_FragColor) {
+    virtual bool fragment(Vec3f gl_FragCoord, Vec3f bar, TGAColor &color) {
         vec3 bn = (varying_nrm*bar).normalized(); // per-vertex normal interpolation
         vec2 uv = varying_uv*bar; // tex coord interpolation
 
